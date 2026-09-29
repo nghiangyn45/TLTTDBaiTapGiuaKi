@@ -9,20 +9,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:orientation="vertical">
 
-        <!-- Tiêu đề ứng dụng -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            text="HỒ SƠ NHÂN VIÊN"
-            android:textSize="20sp"
+            android:text="QUẢN LÝ THÔNG TIN NHÂN VIÊN"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp" />
 
-        <!-- CardView hiển thị thông tin -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,16 +34,7 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- Ảnh đại diện minh họa -->
-                <ImageView
-                    android:layout_width="72dp"
-                    android:layout_height="72dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@android:drawable/ic_menu_myplaces"
-                    android:layout_marginBottom="12dp"
-                    app:tint="#38BDF8" />
-
-                <!-- Tên nhân viên (In hoa) -->
+                <!-- Yêu cầu 6.3: Hiển thị tên viết hoa[cite: 38] -->
                 <TextView
                     android:id="@+id/tvName"
                     android:layout_width="match_parent"
@@ -54,55 +43,75 @@
                     android:textStyle="bold"
                     android:textColor="#FFFFFF"
                     android:gravity="center"
-                    android:layout_marginBottom="16dp" />
+                    android:layout_marginBottom="12dp" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#334155"
-                    android:layout_marginBottom="16dp" />
+                    android:layout_marginBottom="12dp" />
 
-                <!-- Các thông tin chi tiết -->
                 <TextView
                     android:id="@+id/tvEmployeeId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:textColor="#E2E8F0"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="6dp" />
 
                 <TextView
                     android:id="@+id/tvDepartment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:textColor="#E2E8F0"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="6dp" />
 
                 <TextView
                     android:id="@+id/tvAgeAndGender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:textColor="#E2E8F0"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="6dp" />
 
+                <!-- Yêu cầu 6.2: Hiển thị lương với định dạng đặc biệt[cite: 38] -->
                 <TextView
                     android:id="@+id/tvSalary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:textColor="#38BDF8"
                     android:textStyle="bold"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="6dp" />
 
+                <!-- Yêu cầu 6.1: Hiển thị mức lương trên số chuẩn[cite: 38] -->
                 <TextView
-                    android:id="@+id/tvSeniority"
+                    android:id="@+id/tvSalaryComparison"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
+                    android:textColor="#FBBF24"
+                    android:layout_marginBottom="6dp" />
+
+                <!-- Yêu cầu 6.5: Hiển thị mức xếp loại dựa trên thâm niên[cite: 38] -->
+                <TextView
+                    android:id="@+id/tvSeniorityRank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:textColor="#4ADE80"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp" />
+
+                <!-- Yêu cầu 6.4: Hiển thị thông tin nhân viên bằng Extension Function[cite: 38] -->
+                <TextView
+                    android:id="@+id/tvSummaryInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#A78BFA"
+                    android:layout_marginBottom="6dp" />
+
+                <!-- Yêu cầu 6.6: Bổ sung một thông tin vào giao diện[cite: 38] -->
+                <TextView
+                    android:id="@+id/tvExtraInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#34D399" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

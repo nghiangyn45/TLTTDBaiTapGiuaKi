@@ -1,11 +1,10 @@
 package com.example.employeeinfo_2415053122129
-import com.example.employeeinfo_2415053122129.model.Employee
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.employeeinfo_2415053122129.databinding.ActivityMainBinding
-import com.example.employeeinfo_2415053122129.utils.toFormattedName
-import com.example.employeeinfo_2415053122129.utils.toSeniorityRank
-import com.example.employeeinfo_2415053122129.utils.toVndCurrency
+import com.example.employeeinfo_2415053122129.model.Employee
+import com.example.employeeinfo_2415053122129.utils.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,12 +12,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Thiết lập ViewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Khởi tạo dữ liệu nhân viên riêng biệt (thay thế bằng thông tin của bạn)[cite: 34]
+        // Khởi tạo dữ liệu nhân viên cá nhân hóa (Yêu cầu 5)[cite: 38]
         val employee = Employee(
             employeeId = "2415053122129",
             fullName = "Nguyễn Minh Nghĩa",
@@ -29,20 +26,32 @@ class MainActivity : AppCompatActivity() {
             seniority = 3
         )
 
-        // Hiển thị dữ liệu từ Model kết hợp sử dụng các Extension Function[cite: 35]
+        // Mức lương chuẩn để so sánh (Yêu cầu 6.1)[cite: 38]
+        val standardSalary = 15000000.0
+
+        // Hiển thị dữ liệu lên giao diện sử dụng các yêu cầu mở rộng (Yêu cầu 6)[cite: 38]
         with(binding) {
-            // Sử dụng Extension Function viết hoa tên
+            // 6.3: Hiển thị tên viết hoa[cite: 38]
             tvName.text = employee.fullName.toFormattedName()
 
             tvEmployeeId.text = "Mã nhân viên: ${employee.employeeId}"
             tvDepartment.text = "Phòng ban: ${employee.department}"
             tvAgeAndGender.text = "Tuổi: ${employee.age} | Giới tính: ${employee.gender}"
 
-            // Sử dụng Extension Function định dạng tiền tệ VND cho mức lương
-            tvSalary.text = "Lương: ${employee.salary.toVndCurrency()}"
+            // 6.2: Hiển thị lương với định dạng đặc biệt[cite: 38]
+            tvSalary.text = "Lương cơ bản: ${employee.salary.toVndCurrency()}"
 
-            // Sử dụng Extension Function phân loại thâm niên
-            tvSeniority.text = "Thâm niên: ${employee.seniority} năm (${employee.seniority.toSeniorityRank()})"
+            // 6.1: Hiển thị thông tin mức lương trên số chuẩn[cite: 38]
+            tvSalaryComparison.text = "So với chuẩn: ${employee.salary.compareWithStandardSalary(standardSalary)}"
+
+            // 6.5: Hiển thị mức xếp loại dựa trên thâm niên[cite: 38]
+            tvSeniorityRank.text = "Thâm niên (${employee.seniority} năm): ${employee.seniority.toSeniorityRanking()}"
+
+            // 6.4: Hiển thị thông tin nhân viên bằng Extension Function[cite: 38]
+            tvSummaryInfo.text = "Tóm tắt: ${employee.getSummaryInfo()}"
+
+            // 6.6: Bổ sung một thông tin vào giao diện[cite: 38]
+            tvExtraInfo.text = "Trạng thái hợp đồng: Chính thức (Full-time)"
         }
     }
 }
