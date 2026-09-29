@@ -1,5 +1,5 @@
 package com.example.employeeinfo_2415053122129
-
+import com.example.employeeinfo_2415053122129.model.Employee
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.employeeinfo_2415053122129.databinding.ActivityMainBinding
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val employee = Employee(
             employeeId = "2415053122129",
             fullName = "Nguyễn Minh Nghĩa",
-            department = "Phòng Phát triển Phần mềm (IT)",
+            department = "Phòng Phát triển Phần mềm",
             age = 20,
             salary = 18500000.0,
             gender = "Nam",
