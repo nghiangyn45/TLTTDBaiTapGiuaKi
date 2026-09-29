@@ -3,7 +3,6 @@ package com.example.employeeinfo_2415053122129
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.employeeinfo_2415053122129.databinding.ActivityMainBinding
-import com.example.employeeinfo_2415053122129.model.Employee
 import com.example.employeeinfo_2415053122129.utils.toFormattedName
 import com.example.employeeinfo_2415053122129.utils.toSeniorityRank
 import com.example.employeeinfo_2415053122129.utils.toVndCurrency
