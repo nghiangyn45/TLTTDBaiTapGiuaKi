@@ -17,7 +17,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    // --- KÍCH HOẠT VIEWBINDING TẠI ĐÂY ---
+    buildFeatures {
+        viewBinding = true
+    }
     buildTypes {
         release {
             optimization {
